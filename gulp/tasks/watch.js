@@ -15,13 +15,14 @@ gulp.task('watch', function() {
     browserSync.reload();
   });
 
-  watch('./app/css/assets/**/*.css', function() {
+  watch('./app/css/sass/**/*.scss', function() {
     gulp.start('cssInject');
+    browserSync.reload();
   });
 
 });
 
-gulp.task('cssInject', ['styles'], function() {
+gulp.task('cssInject', ['sass'], function() {
   return gulp.src('./app/css/main/styles.css')
     .pipe(browserSync.stream());
 });
