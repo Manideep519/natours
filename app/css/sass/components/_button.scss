@@ -10,19 +10,15 @@
 		position: relative;
 		font-size: 1.6rem;
 	}
-	&:active{
-		transform: translateY(-.1rem);
-		box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2);
-	}
 
 	&:hover{
 		transform: translateY(-.3rem);
 		box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
 	}
-
-	&--white{
-		background-color: #FFF;
-		color: #777;
+	
+	&:active{
+		transform: translateY(-.1rem);
+		box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2);
 	}
 
 	&::after{
@@ -38,6 +34,11 @@
 		transition: all .4s;
 	}
 
+	&--white{
+		background-color: #FFF;
+		color: #777;
+	}
+
 	&--white::after{
 		background-color: #FFF;
 	}
@@ -50,6 +51,15 @@
 	&--animated{
 		animation: moveInBottom .5s ease-out .75s;
 		animation-fill-mode: backwards;
+	}
+
+	&--green{
+		background-color: $mediumGreen;
+		color: $white;
+	}
+	
+	&--green::after{
+		background-color: $mediumGreen;
 	}
 }
 
@@ -78,3 +88,6 @@
 		box-shadow: 0 .5rem 1rem rgba($black,0.15);
 	}
 }
+
+
+

@@ -1,0 +1,160 @@
+
+/*FUNCTIONALITY*/
+.card{
+	perspective: 150rem;
+	position: relative;
+	height: 52rem;
+
+	&__side{
+		font-size: 3rem;
+		height: 52rem;
+		width: 100%;
+		transition: all .8s ease;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+		
+		backface-visibility: hidden;
+		box-shadow: 0 1.5rem 4rem rgba($black,.15);
+		border-radius: 3px;
+
+		&--front{
+			background-color: $white;
+		}
+
+		&--back{
+			transform: rotateY(180deg);
+
+			&-1{
+				background-image: linear-gradient(to right bottom, $color-orange-light, $color-orange-dark);
+			}
+
+			&-2{
+				background-image: linear-gradient(to right bottom, $lightGreen, $darkGreen);
+			}
+
+			&-3{
+				background-image: linear-gradient(to right bottom, $color-blue-light, $color-blue-dark);
+			}
+		}
+	}
+
+	&:hover &__side--front{
+		transform: rotateY(-180deg);
+	}
+
+	&:hover &__side--back{
+		transform: rotateY(0deg);
+	}
+
+	/* FRONT SIDE STYLING*/
+
+	&__picture{
+		height: 23rem;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-blend-mode: screen;
+		clip-path: polygon(0 0,100% 0,100% 85%,0 100%);
+
+		&--1{
+			background-image: linear-gradient(to right bottom, $color-orange-light, $color-orange-dark),
+			url('../../img/nat-5.jpg');
+		}
+
+		&--2{
+			background-image: linear-gradient(to right bottom, $lightGreen, $darkGreen),
+			url('../../img/nat-6.jpg');
+		}
+
+		&--3{
+			background-image: linear-gradient(to right bottom, $color-blue-light, $color-blue-dark),
+			url('../../img/nat-7.jpg');
+		}
+	}
+
+
+	&__heading{
+		font-size: 2.8rem;
+		font-weight: 300;
+		text-transform: uppercase;
+		color: $white;
+		text-align: right;
+
+		position: absolute;
+		top: 12rem;
+		right: 2rem;
+		width: 75%;
+	}
+
+	&__heading-span{
+		padding: 1rem 1.5rem;
+		box-decoration-break: clone;
+
+		&--1{
+			background-image: linear-gradient(to right bottom, 
+				rgba($color-orange-light, .85), 
+				rgba($color-orange-dark, .85));
+		}
+
+		&--2{
+			background-image: linear-gradient(to right bottom, 
+				rgba($lightGreen, .85), 
+				rgba($darkGreen, .85));
+		}
+
+		&--3{
+			background-image: linear-gradient(to right bottom, 
+				rgba($color-blue-light, .85), 
+				rgba($color-blue-dark, .85));
+		}
+	}
+
+	&__details{
+		padding: 3rem;
+
+		ul{
+			list-style: none;
+			width: 80%;
+			margin: 0 auto;
+
+		li{
+			text-align: center;
+			font-size: 1.5rem;
+			padding: 1rem;
+
+				&:not(:last-child){
+					border-bottom: 1px solid #eee;
+				}
+			}
+		}
+	}
+/*  BACK CARD STYLING */
+
+	&__cta{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		text-align: center;
+		width: 100%;
+	} 
+
+	&__price-box{
+		text-align: center;
+		color: $white;
+		margin-bottom: 8rem;
+	}
+
+	&__price-only{
+		font-size: 1.4rem;
+		text-transform: uppercase;
+	}
+
+	&__price-value{
+		font-size: 6rem;
+		font-weight: 100;
+	}
+}
+
