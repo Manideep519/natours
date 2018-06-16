@@ -65,6 +65,10 @@ body{
 	&:hover{
 		transform:skewX(10deg) skewY(2deg) scale(1.1);
 		text-shadow: .5rem 1rem 2rem rgba(0,0,0,0.2);
+
+		@include respond (tab-port){
+			transform: none;
+		}
 	}
 }
 
